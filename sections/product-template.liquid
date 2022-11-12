@@ -1,133 +1,120 @@
-{%- assign current_variant = product.selected_or_first_available_variant -%}
-{%- assign product_thumb_size = '160x' -%}
-{%- assign product_image_zoom_size = '1800x1800' -%}
-{%- assign enable_zoom = settings.enable_zoom -%}
-
 <style>
-  .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto{
-    padding: 0 !important;
+  .swiper-slide-thumb-active > img {
+    opacity: 1 !important;
   }
-  #hg1 > div > div.hooper-progress{
-    display: flex;
-    transform: rotate(270deg);
-    transform-origin: right center;
-    width: 98%;
-    height: 0.2rem;
-    justify-content: flex-end;
+
+  .swiper-slide-visible > img {
+    background-color: #000000;
+    opacity: 0.8;
   }
-  @media only screen and (max-width:767px){
-    #hg1{
-      height:100vw !important;
-    }
-  }
-  @media only screen and (min-width:767px){
-    #hg1{
-      height: 40vw !important;
-    }
-    #hg2{
-      height: 75vh !important;
-    }
-  }
-  .hooper-progress{
-    margin-left: 1.5rem;
-  }
-  .prcol{
-    padding: 2rem !important;
-  }
-  .hooper-progress-inner{
-    background-color: #1b1b1b;
-  }
-  #prs-sheet{
-    width: 100%;
-  }
-  #hg2 > div > ul > li.hooper-slide{
-    height: 76px !important;
+  /* .sw-th > .swiper-slide{
+    width: 70px !important;
+  } */
+  .mySwiper {
+    width: 30%;
   }
 </style>
+<v-app>
   <div id="prslid">
-    <v-app>
-      <v-row no-gutters>
-        <v-col cols="12" md="4" class="prcol prcol2">
-      <div
-      class="d-flex justify-center mb-6 bg-surface-variant"
-    >
-    <v-col cols="10">
-      <div
-      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-      class="swiper mySwiper2"
-    >
-      <div class="swiper-wrapper">
-          {% for media in product.media %}
-          {% case media.media_type %}
-            {% when 'image' %}
-            <div class="swiper-slide">
-                <img src="{{ media | img_url: '450x'}}" alt="{{ media.alt }}">
-               </div>
-               {% endcase %}
-               {% endfor %}
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+    {%- assign product_thumb_size = '160x' -%} {%- assign
+    product_image_zoom_size = '1800x1800' -%} {%- assign enable_zoom =
+    settings.enable_zoom -%}
 
-   
-</v-col>
-<v-col cols="2">
-  <div thumbsSlider="" class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      {% for media in product.media %}
-          {% case media.media_type %}
-            {% when 'image' %}
-            <div class="swiper-slide">
-                <img src="{{ media | img_url: '100x100'}}" alt="{{ media.alt }}">
-               </div>
-               {% endcase %}
-               {% endfor %}
+    <div class="d-flex justify-center mb-6 bg-surface-variant">
+      <v-sheet
+        :height="heightS2"
+        :width="widthS2"
+        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+        class="swiper mySwiper2"
+      >
+        <div class="swiper-wrapper sw-sl">
+          {% for media in product.media %} {% case media.media_type %} {% when
+          'image' %}
+          <div class="swiper-slide">
+            <div class="swiper-zoom-container">
+              <img src="{{ media | img_url: '450x' }}" alt="{{ media.alt }}" />
+            </div>
+          </div>
+          {% endcase %} {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </v-sheet>
+      <v-sheet v-show="$vuetify.breakpoint.mobile" thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper sw-th">
+          {% for media in product.media %} {% case media.media_type %} {% when
+          'image' %}
+          <div class="swiper-slide">
+            <img src="{{ media | img_url: '100x100' }}" alt="{{ media.alt }}" />
+          </div>
+          {% endcase %} {% endfor %}
+        </div>
+      </v-sheet>
     </div>
   </div>
-  </v-col>
-  </v-row>
-    </v-app>
-    
-  </div>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      loop: true,
-      spaceBetween: 10,
-      direction: vertical,
-      mousewheel: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-    });
-  </script>
+</v-app>
+
 <script>
-  new Vue({
-        el: "#prslid",
-        vuetify: new Vuetify(),
-        computed: {
-        order () {
+  const vue = new Vue({
+    el: "#prslid",
+    data: {
+    },
+    vuetify: new Vuetify(),
+    computed: {
+      widthS2() {
         switch (this.$vuetify.breakpoint.name) {
-          case 'xs': return 'last'
-          case 'sm': return 'last'
-          case 'md': return 'first'
-          case 'lg': return 'first'
-          case 'xl': return 'first'
+          case "xs":
+            return "100%";
+          case "sm":
+            return "100%";
+          case "md":
+            return "30%";
+          case "lg":
+            return "30%";
+          case "xl":
+            return "30%";
+        }
+      },
+      heightS2() {
+        switch (this.$vuetify.breakpoint.name) {
+          case "xs":
+            return "90vh";
+          case "sm":
+            return "90vh";
+          case "md":
+            return "45vw";
+          case "lg":
+            return "45vw";
+          case "xl":
+            return "45vw";
         }
       }
     },
-        delimiters: ["${", "}"]
-    })
+    mounted() {
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 2,
+        slidesPerView: 5,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        direction: "vertical",
+        mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          mousewheel: true,
+        },
+        zoom: {
+          maxRatio: 2,
+          minRatio: 1.2,
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+    },
+    delimiters: ["${", "}"],
+  });
 </script>
-
