@@ -115,21 +115,25 @@
 <script>
   new Vue({
         el: "#prslid",
-        components: {
-            Hooper: window.Hooper.Hooper,
-            Slide: window.Hooper.Slide,
-            HooperProgress: window.Hooper.Progress
-        },
         data() {
             return {
-                hooperSettings: {
-                    vertical:true,
-                    itemsToShow:1,
-                    infiniteScroll: false,
-                    centerMode: true,
-                }   
+              swiper: null,
             }
         },
+        mounted() {
+    this.swiper = new window.Swiper('.swiper-container', {
+      cssMode: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      mousewheel: true,
+      keyboard: true,
+    })
+  },
         vuetify: new Vuetify(),
         computed: {
         order () {
