@@ -86,8 +86,11 @@
     </div>
   </div>
   </v-col>
-   <!-- Initialize Swiper -->
-   <script>
+  </v-row>
+    </v-app>
+    
+  </div>
+  <script>
     var swiper = new Swiper(".mySwiper", {
       loop: true,
       spaceBetween: 10,
@@ -98,6 +101,8 @@
     var swiper2 = new Swiper(".mySwiper2", {
       loop: true,
       spaceBetween: 10,
+      direction: vertical,
+      mousewheel: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -107,41 +112,9 @@
       },
     });
   </script>
-  </v-row>
-    </v-app>
-    
-  </div>
-
 <script>
   new Vue({
         el: "#prslid",
-        data() {
-            return {
-              swiper: null,
-            }
-        },
-        mounted() {
-    this.swiper = new window.Swiper('.mySwiper', {
-      loop: true,
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-    })
-    this.swiper = new window.Swiper('.mySwiper2', {
-      loop: true,
-      spaceBetween: 10,
-      mousewheel: true,
-      keyboard: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-    })
-  },
         vuetify: new Vuetify(),
         computed: {
         order () {
