@@ -43,6 +43,14 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Source+Serif+Pro&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
 
     <link
       rel="preload"
@@ -78,6 +86,9 @@
     {%- endif -%} {%- if current_tags -%}{%- assign meta_tags = current_tags |
     join: ', ' -%} &ndash;
     {{ 'general.meta.tags' | t: tags: meta_tags -
+
+
+
 
 
 
@@ -162,6 +173,9 @@
       })(window, document, "clarity", "script", "e7mm2vrqhl");
     </script>
     <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body
     id="{{ page_title | handle }}"

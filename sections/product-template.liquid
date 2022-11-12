@@ -47,162 +47,66 @@
   <div id="prslid">
     <v-app>
       <v-row no-gutters>
-        <v-col :order="order" cols="12" md="4" class="prcol prcol1">
-          <div id="tab{{block.id}}" class="{{tabClass}} product-description rte">{{ product.description }}</div>
-        </v-col>
         <v-col cols="12" md="4" class="prcol prcol2">
       <div
       class="d-flex justify-center mb-6 bg-surface-variant"
     >
     <v-col cols="10">
-      
+      <div
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      class="swiper mySwiper2"
+    >
+      <div class="swiper-wrapper">
+          {% for media in product.media %}
+          {% case media.media_type %}
+            {% when 'image' %}
+            <div class="swiper-slide">
+                <img src="{{ media | img_url: '450x'}}" alt="{{ media.alt }}">
+               </div>
+               {% endcase %}
+               {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+   
 </v-col>
 <v-col cols="2">
- 
+  <div thumbsSlider="" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for media in product.media %}
+          {% case media.media_type %}
+            {% when 'image' %}
+            <div class="swiper-slide">
+                <img src="{{ media | img_url: '100x100'}}" alt="{{ media.alt }}">
+               </div>
+               {% endcase %}
+               {% endfor %}
     </div>
+  </div>
   </v-col>
-  </v-col>
-  <v-col cols="12" md="4" class="prcol prcol3">
-    <div>
-      <h1>{{ product.title }}</h1>
-      {%- if settings.spr_availability -%}
-				<div class="product-stock">{{ 'products.product.availability' | t }}
-                  	{%- liquid
-                        assign classNm = 'instock'
-                        assign stickLbl = 'products.product.available' | t
-                        if current_variant.inventory_management == "shopify"
-                            if current_variant.available and current_variant.inventory_quantity < 1
-                                assign classNm = 'preorder'
-                                assign stickLbl = 'products.product.pre_order' | t
-                            elsif current_variant.available
-                            	assign classNm = 'instock'
-                        		assign stickLbl = 'products.product.available' | t
-                            else
-                                assign classNm = 'outstock'
-                                assign stickLbl = 'products.product.unavailable' | t
-                            endif
-                        endif
-                    -%}
-					<span class="stockLbl {{classNm}}" data-in="{{ 'products.product.available' | t }}" data-out="{{ 'products.product.unavailable' | t }}" data-pre="{{ 'products.product.pre_order' | t }}">{{stickLbl}}</span>
-				</div>
-			{%- endif -%}
-      {%- unless settings.catalogmode and linklists[product.handle].links.size == 0 -%}
-      <p class="flex product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
-          {% if current_variant.compare_at_price > current_variant.price %}
-              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-              <span class="product-price__price product-price__price-{{ section.id }} product-price__sale"><span id="ProductPrice-{{ section.id }}">{{ current_variant.price | money }}</span></span>
-              <s id="ComparePrice-{{ section.id }}" class="product-price__price">{{ current_variant.compare_at_price | money }}</s>
-          {% else %}
-              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-              <span class="product-price__price product-price__price-{{ section.id }}"><span id="ProductPrice-{{ section.id }}">{{ current_variant.price | money }}</span></span>
-        	  <s id="ComparePrice-{{ section.id }}" class="product-price__price hide">{{ current_variant.compare_at_price | money }}</s>
-          {% endif %}
-          {% if settings.show_saleoff %}
-              <span class="discount-badge{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">
-                  <span class="small--hide medium--hide"> | </span>
-                  <span itemprop="name">{{ 'products.product.you_save' | t}}</span>
-                  <span id="SaveAmount-{{ section.id }}" class="product-single__save-amount">{{ current_variant.compare_at_price | minus: current_variant.price | money }}</span>
-                  <span class="off">(<span>{{ current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price }}</span>%{{ 'products.product.off' | t}})</span>
-              </span>
-          {% endif %}         
-      </p>
-       <span class="price__unit{% unless current_variant.unit_price_measurement %} hide{% endunless %}">
-              <span data-unit-price>{{ current_variant.unit_price | money }}</span> /
-              <span data-unit-base>
-                    {%- if current_variant.unit_price_measurement -%}
-                      {%- if current_variant.unit_price_measurement.reference_value != 1 -%}{{- current_variant.unit_price_measurement.reference_value -}}{%- endif -%}
-                      {{ current_variant.unit_price_measurement.reference_unit }}
-                    {%- endif -%}
-              </span>
-       </span>
-  
-  	  {% if settings.show_taxlbl %}
-        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
-          <div class="product__policies rte" data-product-policies>
-              {% if shop.taxes_included %}{{ 'products.product.include_taxes' | t }}{% endif %}
-              {% if shop.shipping_policy.body != blank %}{{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}{% endif %}
-          </div>
-  		{%- endif -%}
-    {%- endif -%}
-  
-  	{%- endunless -%}
-    {%- if linklists[product.handle].links.size > 0 -%}
-    {%- include 'products-group' -%}
-{%- else -%}
-    {%- capture "form_classes" -%}product-form-{{ product.id }} productForm{% if settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}{%- endcapture %}
-    {% form 'product', product, class:form_classes, novalidate: 'novalidate' %}
-        <div class="product-form mfp-link">
-            {% unless product.options.size == 1 and product.variants[0].title == 'Default Title' %}
-                {% assign sizechart = false %}
-                {% for option in product.options_with_values %}
-                    <div class="selector-wrapper js product-form__item{% if settings.show_swatch %} hide{% endif %}">
-                        <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}
-                            {% assign optionName = option.name | downcase %}
-                            {% if settings.sizechart_link and optionName contains "size" or optionName contains "rozmiar" or optionName contains "taille" or optionName contains "talla" or optionName contains "tamaño" or optionName contains "größe" %}
-                                <a href="#sizechart" class="mfp sizelink" data-effect="mfp-zoom-in"><i class="ad ad-ruler"></i> {{ 'products.product.size_chart' | t}}</a>
-                                {% assign sizechart = true %}
-                                {%- assign sizechartcontent = true -%}
-                            {% endif %}
-                        </label>
-                        <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input selectbox" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
-                            {% for value in option.values %}<option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>{% endfor %}
-                        </select>
-                    </div>
-                {% endfor %}
-            {% endunless %}
-
-            <select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants selectbox no-js hide">
-                {% for variant in product.variants %}
-                    {% if variant.available %}
-                        <option{% if variant == current_variant %} selected="selected"{% endif %} value="{{ variant.id }}">{{ variant.title }}</option>
-                    {% else %}
-                        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-            <!-- product swatches -->
-            {% if settings.show_swatch and product.variants.size > 0 and product.variants[0].title != 'Default Title' %}
-                {% for option in product.options %}{% include 'swatch' with option %}{% endfor %}
-            {% endif %}
-        </div>
-
-        {{infoLinks}}
-{%- unless settings.catalogmode -%}
-          <!-- add to cart -->
-          <div class="flex product-action">
-              {% if settings.quan-sel %}
-                  <div class="qtyField" title="{{ 'products.product.quantity' | t }}">
-                      <a class="qtyBtn minus" href="javascript:void(0);"><i class="ad ad-minus-r" aria-hidden="true"></i></a>
-                      <input type="text" id="quantity" name="quantity" value="1" class="product-form__input qty" />
-                      <a class="qtyBtn plus" href="javascript:void(0);"><i class="ad ad-plus-r" aria-hidden="true"></i></a>
-                  </div>
-              {% endif %}
-                  <button type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if settings.addto_btn_an %} btnzoom{% endif %}">
-                      <span id="AddToCartText-{{ section.id }}">
-                          {% if current_variant.available and current_variant.inventory_quantity < 1 and current_variant.inventory_management == "shopify" %}
-                            {{'products.product.pre_order' | t }}
-                          {% elsif current_variant.available %}
-                            {{ 'products.product.add_to_cart' | t }}
-                          {% else %}
-                            {{'products.product.sold_out' | t }}
-                          {% endif %}
-                      </span>
-                  </button>
-          </div>
-          {% if settings.enable_payment_button %}
-              {%- if settings.terms_checkbox -%}
-                  <p class="cart_tearm">
-                      <label for="prTearm"><input type="checkbox" name="tearm" id="prTearm" class="checkbox custCheck" value="tearm" required /><span class="checkbox"></span> {{settings.terms_text}}</label>
-                  </p>
-              {%- endif -%}
-              {{ form | payment_button }}
-          {% endif %}
-  {%- endunless -%}
-    {% endform %}
-{%- endif -%}
-    </div>
-    
-  </v-col>
+   <!-- Initialize Swiper -->
+   <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+  </script>
   </v-row>
     </v-app>
     
