@@ -1,0 +1,77 @@
+{
+  "sections": {
+    "collection": {
+      "type": "main-collection",
+      "blocks": {
+        "8f325890-3031-49db-87f8-50e35d694643": {
+          "type": "by_color",
+          "settings": {
+            "title": "Filter by Color",
+            "filter_tags": "Red,\nEmerald,\nSage,\nOlive Green,\nBlue,\nGreen,\nYellow,\nCamel,\nWhite,\nDusty Pink,\nBlue Grey,\nRust0,\nMocha,\nLight Peach,\nLilac,\nD Blue,\nPewter,\nLight Purple,\nEmerald Green,\nGolden Sand,\nNude Pink,\nIvory,\nGolden Brown,\nFairy Floss,\nStone,\nDeep Khaki,\nStorm,\nMocha Nude,\nAlmond,\nCashmere,\nHoneymoon,\nCaribbean Sea,\nCafé,\nPebble,\nNude,\nLatte,\nTaffy,\nMushroom,\nPeach,\nNude Ivory,\nCloud Blue,\nDeep Burgundy,\nBone,\nChestnut,\nBeige Brown,\nLight Grey,\nOff White,\nBurgundy,\nTaupe,\nDusty Mocha,\nSilver Grey,\nDusty Peach,\nDark Navy,\nDusty Blue,\nGrey Marle,\nNude Mocha,\nDeep Purple,\nRiver White,\nSkin,\nWonder White,\nGrey Blue,\nMauve,\nBaby Blue,\nWatermelon,\nMulberry,\nBlack,\nMaroon,\nLight Silver Grey,\nSilver Purple,\nDusty Purple,\nDeep Mocha,\nSalmon,\nApricot,\nPlum,\nCharcoal,\nBlush,\nDusty Khaki,\nCoffee,\nTango,\nDark Blue,\nOcean Blue,\nLight Mocha,\nNude Bone,\nSoft Pink,\nLight Blue,\nDark Blush,\nDeep Sage,\nDeep Blush,\nWalnut,\nRose Pink,\nMidnight Blue,\nMahogany,\nSteel Grey,\nMustard,\nLight Turquoise,\nDark Khaki,\nDark Turquoise,\nHot Pink,\nRose,\nLight Teal,\nDusty Mustard,\nDenim Blue,\nMint,\nSand,\nKhaki,\nNavy Blue,\nGrey Marl,\nDark Night,\nForest Green,\nCocoa,\nGraphite,\nDark Mocha,\nDeep Caramel,\nArmy Green,\nMilky Pink,\nCloud Green,\nKhaki Brown,\nTerracotta,\nPolice Blue,\nDark Cloud,\nLight Sterling Silver,\nCloud Emerald,\nCopper,\nMarl Grey,\nDark Dusty Purple,\nLight Taupe,\nDark Red,\nDark Pink,\nLight Apricot,\nSea Teal,\nDark Purple,\nDark Charcoal,\nRustic Blue,\nBaby Pink,\nLight Khaki,\nDusty Grey,\nLight Blush,\nRustic Purple,\nDark Teal,\nLight Pink,\nDeep Dusty Pink,\nSofy Grey,\nLight Jade,\nDark Emerald Green,\nDusty Nude,\nSunlight Grey,\nMoonlight Grey,\nBurnt Orange,\nWashed Blue,\nLight Nude Mocha,\nDark Dusty Pink,\nCaramel,\nCotton Candy Pink,\nWarm Apricot,\nLight Denim Blue,\nAqua Blue,\nPretty in Pink,\nLight Charcoal,\nOff White Skin,\nLight Nude Beige,\nDark Beige,\nLight Lilac,\nNight Navy,\nBerry,\nDeep Mauve,\nMajenta,\nDeep Ocean,\nPale Green,\nSteel,\nBlack Paisley,\nPink Paisley,\nLight Tan,\nOrange Pink,\nSage Blue,\nBrass,\nBeige\/Sage,\nWine Red,\nDeep Blue,\nVintage Wash,\nLight Denim,\nDark Denim,\nRoyal Blue,\nLight Stone Wash,\nVintage Blue,\nDenim,\nWash Blue,\nWash Acid,\nBlue Wash,\nGrey,\nBeige,\nGold,\nChocolate,\nCream,\nTeal,\nAqua,\nDark Green,\nOlive,\nTan,\nBrown,\nAzure Blue,\nAvocado,\nLight Mint,\nDeep Charcoal,\nTurquoise,\nRudy Red,\nPink,\nJade,\nOff White Beige,\nAquamarine,\nBeige Pink,\nSand Beige,\nDark Brown,\nDeep Camel,\nPretty Pink,\nNude Purple,\nTiffany Blue,\nGrayish Blue,\nBaby Light Pink,\nPerfect Tiffany Blue,\nOff Silver,\nMinty,\nDreamy Khaki,\nMint Green,\nLight Nude Pink,\nOff Beige,\nLight Beige,\nOff Black,\nSanel Orange,\nWarm Orange,\nBarbie Pink,\nTeal Mint,\nCotton Candy,\nSky Blue,\nMagenta,\nJade Blue,\nYellow Mustard,\nDark Lilac,\nWash Orange,\nFairy Floss,\nDark Nude,\nPistachio,\nPacific Purple,\nAegean Blueb,\nPecan,\nDark Chocolate,\nSapphire,\nIndigo,\nCrepe Pink,\nPink Lemonade,\nCobalt Blue,\nBone White,\nSilver Charm,\nAzure,\nIris,\nLight Mustard,\nDeep Mustard,\nSoft Nude,\nOatmeal,\nBaby Tiffany Blue,\nBali Blue,\nCurrant,\nGirls Pink,\nPerfect Pink,\nDark Burgundy,\nWood,\nFrench Pink,\nSaddle,\nStone Mocha,\nStill Grey,\nDark Denim Blue,\nSandy,\nChampagne,\nLight Camel,\nBritish Green,\nOrange, \nDusty Rose,\nPrint,\nLight Blue Print,\nGrey Polka Dot,\nRose Wood,\nBlack Zigzag,\nLight Dusty Pink,\nSoft Khaki,\nDark Sage,\nTwo Tone,\nPastel Blue Paisley,\nSoft Wheat,\nPrint-Grey,\nPrint-Black,\nColonial Tan,\nPale Green Paisley,\nBlack Blue Floral,\nBlue Paisley,\nPinky Panda,\nDeep Pink,\nLilac Print,\nBeige\\\/Sage,\nBaby Blue Print,\nBlack Zig Zag,\nBubblegum,\nBlack and White,\nPeach Print,\nBare Nude,\nWhite Pink Panda,\nBlack Chiffon,\nTan Print,\nBeige Leopard,\nSmileys,\nDeep Taupe,\nWhite Leopard,\nNudish Taupe,\nWhite Floral,\nDeep Red,\nBlack Boarder,\nPearl Floral,\nPea Green,\nPrint Mustard,\nPetite,\nPrint-White,\nWhite Panda Button,\nPurple Grey,\nMaroon Polka,\nSilver Dusty Purple,\nGalaxy Starz,\nSilver Dusty Taupe,\nBrown paisley Print,\nSage Gold,\nBrown Zig Zag,\nPrint - Dusty Pink,\nBlack Stone,\nTaupe Ash,\nCheck,\nLight Sage,\nMint White Panda,\nBone Nude Print,\nWhite Print,\nBrown Zigzag,\nWash,\nTapue,\nBronze,\nDeep Salmon,\nChain Blk Print,\nWhite Floral Print,\nBeige Floral,\nDenim Wash,\nDusty Mauve,\nMocha Floral,\nStrathe,\nGrey White,\nBlack Polka,\nAntique White,\nDeep Grey,\nBlack Print,\nLight Stone,\nPrint - Green,\nOyster Grey,\nShell White,\nSoft Blue,\nBlack Stripe,\nColonial Brick,\nBoysenberry,\nFawn,\nCinnamon,\nSage Print,\nFloral Sage,\nPink Fox,\nAbalone Grey,\nWhite Love Hearts,\nDark Taupe,\nPrint-Boho Green,\nDark Blue Grey,\nOnyx Green,\nLight Serenity,\nBeige and Black,\nZoho Blue,\nLight Salmon,\nImperial,\nSage Floral,\nMarine Magic,\nSteel Blue,\nBelgian Toffee,\nDark Grey,\nPlatinum Grey,\nFaux Fur,\nSilver Blue,\nPolka Cat Grey,\nGrey Print,\nBelagio,\nLight Grey Marl,\nLight Blush\\\/White,\nGloss,\nLight Fawn,\nLilac Blue Leopard,\nLight Nude,\nDark GreyDark Grey,\nMatte,\nNude,\nAlexia,\nPanda Cloud Blue,\nBrown Print,\nLight Hazelnut,\nGreige,\nPrint Sage,\nHoney Blonde,\nPastel Khaki,\nBlack Gold,\nMink,\nDenim Blue Print,\nChrome,\nCanvas,\nNavy Print,\nCookie Dough,\nWhite Sand,\nRiver Rock,\nSurf Green,\nAutumn Sky,\nCoco Mist,\nOlive Khaki,\nTiger Print,\nGolden Mocha,\nRianna,\nBeige Print,\nWhite Stripe,\nDusty Peach Floral,\nSilver Nude Latte,\nSilver Pink,\nDeep Teal,\nSnow,\nNavy Stripe,\nNude Grey,\nDeep Peach,\nNudish Pink,\nIlliana,\nGrey Floral,\nMaden,\nChocolate Maroon Floral,\nMocha Print,\nPink Floral,\nBlack White,\nPink Beige,\nAngel Pink,\nRose Beige,\nDark Grey Blue,\nGreen Paisley Print,\nDeep Rust,\nDark Denim Blue,\nBoho Beige Print,\nGrey Black,\nAminah,\nRetro Rose,\nPink Leopard,\nLight Tan Print,\nSilver Mocha,\nLight Dusty Purple,\nMid Blue,\nCreamy Pink,\nBlack\\\/White,\nDark Salmon,\nFairy Dusty Pink,\nGrey Mocha,\nBlack\\\/Sage,\nSand Bank,\nDark Maroon,\nPink Print,\nBlack Floral,\nSoft Grey,\nSilver Khaki,\nBlackBone,\nStone Wash Blue,\nVandyke,\nNavy Floral,\nSilver Latter,\nPerfect Purple,\nNutmeg,\nBlush Print,\nNudeBone,\nFloral Navy,\nPink Purple White,\nSky Blue Navy White,\nBlack and Brown,\nWhite and Brown,\nPurple Print,\nBlack and Blue,\nLight Green,",
+            "color_size": "small",
+            "color_style": "rectangle"
+          }
+        },
+        "8e313308-ae9c-4fdf-9057-e6741ca1614e": {
+          "type": "filtertag",
+          "settings": {
+            "title": "Filter By Price",
+            "filter_tags": "$4.99 - $10.99,\n$9.99 - $19.99, \n$19.99 - $21.99,\n$21.99 - $34.99,\n$39.99 - $49.99,\n$49.99 - $59.99,\n$59.99 - $69.99,\n$69.99 - $89.99,\n$89.99-$109.99,\n$139.99 - $149.99,\n$149.99 - $169.99,\n$220.99 - $229.99",
+            "twocall": true
+          }
+        },
+        "58317b8c-e45f-4bc0-bc8a-5aeef187840d": {
+          "type": "filtertag",
+          "settings": {
+            "title": "Filter By Size",
+            "filter_tags": "M,\nS,\nXS,\nL,\nXL,\n6,\n8,\n10,\n12,\n14,\n16,\n18,\nFree Size",
+            "twocall": true
+          }
+        }
+      },
+      "block_order": [
+        "8f325890-3031-49db-87f8-50e35d694643",
+        "8e313308-ae9c-4fdf-9057-e6741ca1614e",
+        "58317b8c-e45f-4bc0-bc8a-5aeef187840d"
+      ],
+      "settings": {
+        "fullwidth": false,
+        "show_collection_name": true,
+        "show_collection_image": false,
+        "banner_position": "top",
+        "bheight": 200,
+        "bheightipad": 200,
+        "bheightmob": 100,
+        "banner_style": "info-over",
+        "text-align": "text-center",
+        "collection-des": "top",
+        "clr_bg": "#dbb3a7",
+        "clr_text": "#000000",
+        "clr_text_des": "#111111",
+        "secondary_image": true,
+        "show_vendor": false,
+        "prlist_btn_show": false,
+        "btn_mobiles": true,
+        "show_color_swatch": true,
+        "color_type": "color",
+        "vr_bg_position": "50% 0",
+        "color_size": "small",
+        "color_style": "rounded",
+        "sort_enable": true,
+        "dis_prod_cnt": true,
+        "dis_grid_icn": false,
+        "prbox_style": "style1",
+        "grid": 4,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "rows": "20",
+        "pagination": "infinite",
+        "collection_sidebar": true,
+        "sidebar_position": "popup"
+      }
+    }
+  },
+  "order": [
+    "collection"
+  ]
+}

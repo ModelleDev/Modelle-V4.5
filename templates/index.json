@@ -1,0 +1,409 @@
+{
+  "sections": {
+    "1662437401b34f7578": {
+      "type": "slideshow",
+      "blocks": {
+        "dd2c157c-f2bf-41bd-a8f8-63234f60f47b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Main-Banners-_3_3b18bcf4-e759-4f5f-af88-9fe57c9c2069.jpg",
+            "mb_image": "shopify:\/\/shop_images\/Main-Banners-_1280-x-880-px.jpg",
+            "alignment": "top",
+            "smalltitle": "",
+            "heading1": "#000000",
+            "title": "",
+            "heading2": "#000000",
+            "subheading": "",
+            "heading3": "#000000",
+            "slide_button_text": "",
+            "link": "shopify:\/\/collections\/new-arrivals",
+            "newTab": false,
+            "text_align": "left"
+          }
+        },
+        "f0fd2eeb-6c18-4813-9bfd-7acf58d5795b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Main-Banners-_5.jpg",
+            "mb_image": "shopify:\/\/shop_images\/Main-Banners-_1280-x-880-px_-_4.jpg",
+            "alignment": "bottom",
+            "smalltitle": "",
+            "heading1": "#000000",
+            "title": "",
+            "heading2": "#000000",
+            "subheading": "",
+            "heading3": "#000000",
+            "slide_button_text": "",
+            "link": "shopify:\/\/collections\/new-arrivals",
+            "newTab": false,
+            "text_align": "left"
+          }
+        },
+        "16624374005d0974b0-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_b337b0ef-cb73-4f74-a470-fa29dc65cf2b.jpg",
+            "mb_image": "shopify:\/\/shop_images\/2_2ae8f63d-35cb-4b80-8f93-fbdf9e885d40.jpg",
+            "alignment": "bottom",
+            "smalltitle": "",
+            "heading1": "#000000",
+            "title": "",
+            "heading2": "#000000",
+            "subheading": "",
+            "heading3": "#000000",
+            "slide_button_text": "",
+            "link": "shopify:\/\/collections\/new-arrivals",
+            "newTab": false,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "dd2c157c-f2bf-41bd-a8f8-63234f60f47b",
+        "f0fd2eeb-6c18-4813-9bfd-7acf58d5795b",
+        "16624374005d0974b0-0"
+      ],
+      "settings": {
+        "section_width": false,
+        "box-width": 1500,
+        "top-offeset": "none",
+        "snow_effect": false,
+        "snow_style": "style1",
+        "autoplay": true,
+        "autoplay_speed": "10000",
+        "arrow": false,
+        "dots": false,
+        "txtanimation": false,
+        "animation-style": "style1",
+        "text-align": "default",
+        "btn-size-desk": "btn-md",
+        "btn-size-mob": "mob-btn-sm",
+        "ds_height": 900,
+        "tb_height": 350,
+        "mb_height": 520
+      }
+    },
+    "16624666987b248d85": {
+      "type": "custom-content",
+      "blocks": {
+        "a8f6814f-e8a5-4233-a00c-3a4e0806be57": {
+          "type": "html",
+          "settings": {
+            "code": "<style>\n      .mq {\n width: 100%;\nopacity:1;\nline-height: 50px;\n\tbackground-color:#1a1a1a ;\n        white-space: nowrap;\n    overflow: hidden;\n    box-sizing: border-box;\n      }\n.mqt{\ncolor:#ffffff;\ndisplay: inline-block;\n    padding-left: 100%;\n    animation: mq 40s linear infinite;}\n      @keyframes mq {\n    0%   { transform: translate(0, 0); }\n    100% { transform: translate(-100%, 0); }\n}\n    <\/style>\n\n    <div class=\"mq\">\n      <p class=\"mqt\">Free Australia Wide Shipping For Orders Over $100.                                                                            Wear Now, Pay Later With afterpay.                                                                             Free International Shipping For Orders Over $150.<\/p>\n    <\/div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "a8f6814f-e8a5-4233-a00c-3a4e0806be57"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "top-offeset": "none",
+        "section_width": false,
+        "hide_mobile": false,
+        "pad-desk": 0,
+        "pad-ipad": 0,
+        "pad-mbl": 0,
+        "prbox_style": "style1",
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm"
+      }
+    },
+    "1662465665b0428d10": {
+      "type": "image-slideshow",
+      "blocks": {
+        "1662465665170c9184-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_de2cd789-0642-4d2a-9dcf-f9ce7556dfe6.jpg",
+            "mb_image": "shopify:\/\/shop_images\/2_642adfc5-00b8-4787-b85d-dae4dce96312.jpg",
+            "link": "shopify:\/\/collections\/sports-wear",
+            "newTab": true
+          }
+        }
+      },
+      "block_order": [
+        "1662465665170c9184-0"
+      ],
+      "settings": {
+        "section_width": true,
+        "top-offeset": "small",
+        "autoplay": true,
+        "autoplay_speed": "5000",
+        "arrow": true,
+        "dots": false,
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "1662465560c383cf13": {
+      "type": "image-slideshow",
+      "blocks": {
+        "1662465560e0b0b8d8-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_63ca9ebf-87e4-47d9-9e13-3bded4f85aa4.jpg",
+            "mb_image": "shopify:\/\/shop_images\/4_4745b511-19c8-4e8f-bda3-8033163f1c06.jpg",
+            "link": "shopify:\/\/collections\/new-arrivals",
+            "newTab": true
+          }
+        }
+      },
+      "block_order": [
+        "1662465560e0b0b8d8-0"
+      ],
+      "settings": {
+        "section_width": false,
+        "top-offeset": "default",
+        "autoplay": true,
+        "autoplay_speed": "5000",
+        "arrow": false,
+        "dots": false,
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "1664554076545da549": {
+      "type": "products-rows",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "collection": "new-arrivals",
+        "secondary_image": true,
+        "show_vendor": false,
+        "prlist_btn_show": false,
+        "btn_mobiles": true,
+        "show_view_all": "VIEW MORE",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "show_color_swatch": true,
+        "color_type": "color",
+        "vr_bg_position": "50% 0",
+        "color_size": "small",
+        "color_style": "rounded",
+        "top-offeset": "default",
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "prbox_style": "style1",
+        "grid": 4,
+        "tablet-grid": 3,
+        "mobile-grid": 2,
+        "rows": "8"
+      }
+    },
+    "1662465734e22a91fd": {
+      "type": "image-slideshow",
+      "blocks": {
+        "1662465734ec28c6a3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.-1783-x-1051-_5.jpg",
+            "mb_image": "shopify:\/\/shop_images\/5_69128b21-8277-49c9-a215-0273605930e2.jpg",
+            "link": "shopify:\/\/collections\/dresses",
+            "newTab": true
+          }
+        }
+      },
+      "block_order": [
+        "1662465734ec28c6a3-0"
+      ],
+      "settings": {
+        "section_width": false,
+        "top-offeset": "default",
+        "autoplay": true,
+        "autoplay_speed": "5000",
+        "arrow": false,
+        "dots": false,
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "166246542369e93b11": {
+      "type": "image-slideshow",
+      "blocks": {
+        "1662465422ba332736-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_bb851471-d2b9-44b8-906b-61b772897df1.jpg",
+            "mb_image": "shopify:\/\/shop_images\/1_cbdb28ed-395f-40cd-b978-9338d47c1804.jpg",
+            "link": "shopify:\/\/collections\/sahara-edit",
+            "newTab": true
+          }
+        }
+      },
+      "block_order": [
+        "1662465422ba332736-0"
+      ],
+      "settings": {
+        "section_width": true,
+        "top-offeset": "default",
+        "autoplay": true,
+        "autoplay_speed": "5000",
+        "arrow": false,
+        "dots": false,
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "1662465131e7db9a99": {
+      "type": "image-slideshow",
+      "blocks": {
+        "16624651317c77ef90-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.-1783-x-1051-_1.jpg",
+            "mb_image": "shopify:\/\/shop_images\/2.-_1280-x-1180-px.jpg",
+            "link": "shopify:\/\/collections\/sports-wear",
+            "newTab": true
+          }
+        }
+      },
+      "block_order": [
+        "16624651317c77ef90-0"
+      ],
+      "settings": {
+        "section_width": false,
+        "top-offeset": "default",
+        "autoplay": true,
+        "autoplay_speed": "5000",
+        "arrow": false,
+        "dots": false,
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "166246581134b8e6c5": {
+      "type": "image-slideshow",
+      "blocks": {
+        "1662465810d10e0132-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.-1920-x-950.jpg",
+            "mb_image": "shopify:\/\/shop_images\/1.--_1280-x-1779-px.jpg",
+            "link": "shopify:\/\/collections\/basic-essentials",
+            "newTab": true
+          }
+        }
+      },
+      "block_order": [
+        "1662465810d10e0132-0"
+      ],
+      "settings": {
+        "section_width": true,
+        "top-offeset": "default",
+        "autoplay": true,
+        "autoplay_speed": "5000",
+        "arrow": true,
+        "dots": false,
+        "snow_effect": false,
+        "snow_style": "style1"
+      }
+    },
+    "1653031856be9bcbdd": {
+      "type": "richtext",
+      "settings": {
+        "fullwidth": true,
+        "top-offeset": "small",
+        "title": "<h2 style=\"font-size:2.5rem;\">About Us<\/h2>",
+        "ttl-text-size": 20,
+        "richtxt": "<p>We truly believe that women hold the power to change the world. We just do our bit in empowering women to embrace modest fashion as their own. We started Modelle, catering to a small community of women in Australia, who were on the lookout for high-quality modest wear. <\/p><p>Established in Chesterhill, Sydney, we always wanted to give our best in modest fashionwear. Rapidly, we started to grow as a modest fashionwear community across nine stores in Australia. We are now actively present in Greenacre and Casula, serving a beautiful community of women. <\/p><p>Now, we are stepping into a global community and serving a worldwide community of beautiful women. Trying to make every woman’s day as bright as possible with our quality modest wear.<\/p>",
+        "text-size": 18,
+        "btntxt": "",
+        "btnurl": "",
+        "btntxt1": "",
+        "btnurl1": "",
+        "btn-size-desk": "btn-sm",
+        "btn-size-mob": "mob-btn-sm",
+        "max-width": 90,
+        "txt_align": "tc",
+        "section_cov": false,
+        "sec_bg_clr": "#fafafa",
+        "text_clr": "#111111"
+      }
+    },
+    "1646040193083fd6ac": {
+      "type": "instagram-shop",
+      "settings": {
+        "title": "<a rel=\"unfollow\" style=\"color:black;\" target=\"_blank\" href=\"https:\/\/www.instagram.com\/modelleofficial\/\">Let's be Modelle BFFs<\/a>",
+        "subtitle": "<b><a rel=\"unfollow\" style=\"color:darkgrey;\" target=\"_blank\" href=\"https:\/\/www.instagram.com\/modelleofficial\/\">Follow Us On <i class=\"ad ad-instagram\"><\/i><\/a><\/b>",
+        "insta_page": "instagram-shop",
+        "top-offeset": "default",
+        "section_width": true,
+        "pad-desk": 55,
+        "pad-ipad": 15,
+        "pad-mbl": 10
+      }
+    },
+    "16337817926d98687d": {
+      "type": "store-features",
+      "disabled": true,
+      "blocks": {
+        "1561784085337-0": {
+          "type": "text_block",
+          "settings": {
+            "icons": "ad-free-delivery",
+            "title": "FREE SHIPPING",
+            "text": "<p>Free AU Wide Shipping for orders over $100<\/p>",
+            "texturl": ""
+          }
+        },
+        "1561784085337-2": {
+          "type": "text_block",
+          "settings": {
+            "icons": "ad-phone-24",
+            "title": "SUPPORT",
+            "text": "<p>+61 416827187 Mon-Fri : 9AM-5PM (AEST)<\/p>",
+            "texturl": ""
+          }
+        },
+        "1561784085337-1": {
+          "type": "text_block",
+          "settings": {
+            "icons": "ad-money",
+            "title": "AFTER PAY",
+            "text": "<p>Buy Now Pay Later<\/p>",
+            "texturl": ""
+          }
+        }
+      },
+      "block_order": [
+        "1561784085337-0",
+        "1561784085337-2",
+        "1561784085337-1"
+      ],
+      "settings": {
+        "hide_mobile": false,
+        "top-offeset": "none",
+        "title": "",
+        "subtitle": "",
+        "style": "style2",
+        "enable_icons": true,
+        "icon-type": "icon",
+        "iconsize": "40",
+        "section_cov": true,
+        "sec_bg_clr": "#1b1b1b",
+        "icons_clr": "#eeeeee",
+        "text_clr": "#ffffff",
+        "border_sep": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "1662437401b34f7578",
+    "16624666987b248d85",
+    "1662465665b0428d10",
+    "1662465560c383cf13",
+    "1664554076545da549",
+    "1662465734e22a91fd",
+    "166246542369e93b11",
+    "1662465131e7db9a99",
+    "166246581134b8e6c5",
+    "1653031856be9bcbdd",
+    "1646040193083fd6ac",
+    "16337817926d98687d"
+  ]
+}

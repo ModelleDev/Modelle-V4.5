@@ -1,0 +1,281 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign product_thumb_size = '160x' -%}
+{%- assign product_image_zoom_size = '1800x1800' -%}
+{%- assign enable_zoom = settings.enable_zoom -%}
+
+<style>
+  .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto{
+    padding: 0 !important;
+  }
+  #hg1 > div > div.hooper-progress{
+    display: flex;
+    transform: rotate(270deg);
+    transform-origin: right center;
+    width: 98%;
+    height: 0.2rem;
+    justify-content: flex-end;
+  }
+  @media only screen and (max-width:767px){
+    #hg1{
+      height:100vw !important;
+    }
+  }
+  @media only screen and (min-width:767px){
+    #hg1{
+      height: 40vw !important;
+    }
+    #hg2{
+      height: 75vh !important;
+    }
+  }
+  .hooper-progress{
+    margin-left: 1.5rem;
+  }
+  .prcol{
+    padding: 2rem !important;
+  }
+  .hooper-progress-inner{
+    background-color: #1b1b1b;
+  }
+  #prs-sheet{
+    width: 100%;
+  }
+  #hg2 > div > ul > li.hooper-slide{
+    height: 76px !important;
+  }
+</style>
+  <div id="prslid">
+    <v-app>
+      <v-row no-gutters>
+        <v-col :order="order" cols="12" md="4" class="prcol prcol1">
+          <div id="tab{{block.id}}" class="{{tabClass}} product-description rte">{{ product.description }}</div>
+        </v-col>
+        <v-col cols="12" md="4" class="prcol prcol2">
+      <div
+      class="d-flex justify-center mb-6 bg-surface-variant"
+    >
+    <v-col cols="10">
+      <hooper id="hg1" group="group1" :settings="hooperSettings">
+        {%- for media in product.media -%}
+        {%- assign imgNo = forloop.index0 -%}
+                {%- case media.media_type -%}
+              {%- when 'image' -%}
+                          {%- unless media.alt == '360' -%}
+                            <slide >
+                          <div id="{{media.id}}" class="prslider FeaturedImageZoom-{{section.id}} product-single__photo{% if enable_zoom %} zoomcr{% endif %}{% if settings.product_latyout == "style4" or settings.product_latyout == "style5" %} slick-active{% endif %}" {% if enable_zoom %}data-zoom="{{ media | img_url: product_image_zoom_size }}"{% endif %} data-slide="{{imgNo}}">
+                              {%- assign primg_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                              <span class="imgWrapper" style="max-width:{% if settings.pimg_maxHt != blank %}{{ settings.pimg_maxHt | times: media.aspect_ratio }}{% else %}{{media.width}}{% endif %}px;">
+                                  <img class="imgFl lazyload FeaturedImage-{{ section.id }} product-featured-img{% if enable_zoom %} js-zoom-enabled{% endif %}{% if featured_img_src == media %} lazypreload{% endif %}" src="{{ media | img_url: "50x" }}" width="300" height="300"
+                                      data-src="{{ primg_url }}" data-widths="[380, 500, 650, 800, 1000, 1300]" data-aspectratio="{{ media.aspect_ratio }}" data-sizes="auto" alt="{{ media.alt | escape }}">
+                              </span>
+                          </div>
+                      </slide>
+                          {%- endunless -%}
+                {%- endcase -%}
+      {%- endfor -%}
+    <hooper-progress vertical="true" slot="hooper-addons"></hooper-progress>
+  </hooper>
+</v-col>
+<v-col cols="2">
+  <hooper id="hg2" group="group1" :items-to-show="1" :items-to-slide="1" :vertical="true" :center-mode="true">
+    {%- for media in product.media -%}
+    {%- assign imgNo = forloop.index0 -%}
+            {%- case media.media_type -%}
+          {%- when 'image' -%}
+                      {%- unless media.alt == '360' -%}
+                        <slide >
+                      <div id="{{media.id}}" class="prslider FeaturedImageZoom-{{section.id}} product-single__photo{% if enable_zoom %} zoomcr{% endif %}{% if settings.product_latyout == "style4" or settings.product_latyout == "style5" %} slick-active{% endif %}" {% if enable_zoom %}data-zoom="{{ media | img_url: product_image_zoom_size }}"{% endif %} data-slide="{{imgNo}}">
+                          {%- assign primg_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                          <span class="imgWrapper" style="max-width:{% if settings.pimg_maxHt != blank %}{{ settings.pimg_maxHt | times: media.aspect_ratio }}{% else %}{{media.width}}{% endif %}px;">
+                              <img class="imgFl lazyload FeaturedImage-{{ section.id }} product-featured-img{% if enable_zoom %} js-zoom-enabled{% endif %}{% if featured_img_src == media %} lazypreload{% endif %}" src="{{ media | img_url: "50x" }}" width="300" height="300"
+                                  data-src="{{ primg_url }}" data-widths="[380, 500, 650, 800, 1000, 1300]" data-aspectratio="{{ media.aspect_ratio }}" data-sizes="auto" alt="{{ media.alt | escape }}">
+                          </span>
+                      </div>
+                  </slide>
+                      {%- endunless -%}
+            {%- endcase -%}
+  {%- endfor -%}
+  </hooper>
+    </div>
+  </v-col>
+  </v-col>
+  <v-col cols="12" md="4" class="prcol prcol3">
+    <div>
+      <h1>{{ product.title }}</h1>
+      {%- if settings.spr_availability -%}
+				<div class="product-stock">{{ 'products.product.availability' | t }}
+                  	{%- liquid
+                        assign classNm = 'instock'
+                        assign stickLbl = 'products.product.available' | t
+                        if current_variant.inventory_management == "shopify"
+                            if current_variant.available and current_variant.inventory_quantity < 1
+                                assign classNm = 'preorder'
+                                assign stickLbl = 'products.product.pre_order' | t
+                            elsif current_variant.available
+                            	assign classNm = 'instock'
+                        		assign stickLbl = 'products.product.available' | t
+                            else
+                                assign classNm = 'outstock'
+                                assign stickLbl = 'products.product.unavailable' | t
+                            endif
+                        endif
+                    -%}
+					<span class="stockLbl {{classNm}}" data-in="{{ 'products.product.available' | t }}" data-out="{{ 'products.product.unavailable' | t }}" data-pre="{{ 'products.product.pre_order' | t }}">{{stickLbl}}</span>
+				</div>
+			{%- endif -%}
+      {%- unless settings.catalogmode and linklists[product.handle].links.size == 0 -%}
+      <p class="flex product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
+          {% if current_variant.compare_at_price > current_variant.price %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <span class="product-price__price product-price__price-{{ section.id }} product-price__sale"><span id="ProductPrice-{{ section.id }}">{{ current_variant.price | money }}</span></span>
+              <s id="ComparePrice-{{ section.id }}" class="product-price__price">{{ current_variant.compare_at_price | money }}</s>
+          {% else %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <span class="product-price__price product-price__price-{{ section.id }}"><span id="ProductPrice-{{ section.id }}">{{ current_variant.price | money }}</span></span>
+        	  <s id="ComparePrice-{{ section.id }}" class="product-price__price hide">{{ current_variant.compare_at_price | money }}</s>
+          {% endif %}
+          {% if settings.show_saleoff %}
+              <span class="discount-badge{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">
+                  <span class="small--hide medium--hide"> | </span>
+                  <span itemprop="name">{{ 'products.product.you_save' | t}}</span>
+                  <span id="SaveAmount-{{ section.id }}" class="product-single__save-amount">{{ current_variant.compare_at_price | minus: current_variant.price | money }}</span>
+                  <span class="off">(<span>{{ current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price }}</span>%{{ 'products.product.off' | t}})</span>
+              </span>
+          {% endif %}         
+      </p>
+       <span class="price__unit{% unless current_variant.unit_price_measurement %} hide{% endunless %}">
+              <span data-unit-price>{{ current_variant.unit_price | money }}</span> /
+              <span data-unit-base>
+                    {%- if current_variant.unit_price_measurement -%}
+                      {%- if current_variant.unit_price_measurement.reference_value != 1 -%}{{- current_variant.unit_price_measurement.reference_value -}}{%- endif -%}
+                      {{ current_variant.unit_price_measurement.reference_unit }}
+                    {%- endif -%}
+              </span>
+       </span>
+  
+  	  {% if settings.show_taxlbl %}
+        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+          <div class="product__policies rte" data-product-policies>
+              {% if shop.taxes_included %}{{ 'products.product.include_taxes' | t }}{% endif %}
+              {% if shop.shipping_policy.body != blank %}{{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}{% endif %}
+          </div>
+  		{%- endif -%}
+    {%- endif -%}
+  
+  	{%- endunless -%}
+    {%- if linklists[product.handle].links.size > 0 -%}
+    {%- include 'products-group' -%}
+{%- else -%}
+    {%- capture "form_classes" -%}product-form-{{ product.id }} productForm{% if settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}{%- endcapture %}
+    {% form 'product', product, class:form_classes, novalidate: 'novalidate' %}
+        <div class="product-form mfp-link">
+            {% unless product.options.size == 1 and product.variants[0].title == 'Default Title' %}
+                {% assign sizechart = false %}
+                {% for option in product.options_with_values %}
+                    <div class="selector-wrapper js product-form__item{% if settings.show_swatch %} hide{% endif %}">
+                        <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}
+                            {% assign optionName = option.name | downcase %}
+                            {% if settings.sizechart_link and optionName contains "size" or optionName contains "rozmiar" or optionName contains "taille" or optionName contains "talla" or optionName contains "tamaño" or optionName contains "größe" %}
+                                <a href="#sizechart" class="mfp sizelink" data-effect="mfp-zoom-in"><i class="ad ad-ruler"></i> {{ 'products.product.size_chart' | t}}</a>
+                                {% assign sizechart = true %}
+                                {%- assign sizechartcontent = true -%}
+                            {% endif %}
+                        </label>
+                        <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input selectbox" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                            {% for value in option.values %}<option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>{% endfor %}
+                        </select>
+                    </div>
+                {% endfor %}
+            {% endunless %}
+
+            <select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants selectbox no-js hide">
+                {% for variant in product.variants %}
+                    {% if variant.available %}
+                        <option{% if variant == current_variant %} selected="selected"{% endif %} value="{{ variant.id }}">{{ variant.title }}</option>
+                    {% else %}
+                        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <!-- product swatches -->
+            {% if settings.show_swatch and product.variants.size > 0 and product.variants[0].title != 'Default Title' %}
+                {% for option in product.options %}{% include 'swatch' with option %}{% endfor %}
+            {% endif %}
+        </div>
+
+        {{infoLinks}}
+{%- unless settings.catalogmode -%}
+          <!-- add to cart -->
+          <div class="flex product-action">
+              {% if settings.quan-sel %}
+                  <div class="qtyField" title="{{ 'products.product.quantity' | t }}">
+                      <a class="qtyBtn minus" href="javascript:void(0);"><i class="ad ad-minus-r" aria-hidden="true"></i></a>
+                      <input type="text" id="quantity" name="quantity" value="1" class="product-form__input qty" />
+                      <a class="qtyBtn plus" href="javascript:void(0);"><i class="ad ad-plus-r" aria-hidden="true"></i></a>
+                  </div>
+              {% endif %}
+                  <button type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if settings.addto_btn_an %} btnzoom{% endif %}">
+                      <span id="AddToCartText-{{ section.id }}">
+                          {% if current_variant.available and current_variant.inventory_quantity < 1 and current_variant.inventory_management == "shopify" %}
+                            {{'products.product.pre_order' | t }}
+                          {% elsif current_variant.available %}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {% else %}
+                            {{'products.product.sold_out' | t }}
+                          {% endif %}
+                      </span>
+                  </button>
+          </div>
+          {% if settings.enable_payment_button %}
+              {%- if settings.terms_checkbox -%}
+                  <p class="cart_tearm">
+                      <label for="prTearm"><input type="checkbox" name="tearm" id="prTearm" class="checkbox custCheck" value="tearm" required /><span class="checkbox"></span> {{settings.terms_text}}</label>
+                  </p>
+              {%- endif -%}
+              {{ form | payment_button }}
+          {% endif %}
+  {%- endunless -%}
+    {% endform %}
+{%- endif -%}
+    </div>
+    
+  </v-col>
+  </v-row>
+    </v-app>
+    
+  </div>
+
+<script>
+  new Vue({
+        el: "#prslid",
+        components: {
+            Hooper: window.Hooper.Hooper,
+            Slide: window.Hooper.Slide,
+            HooperProgress: window.Hooper.Progress
+        },
+        data() {
+            return {
+                hooperSettings: {
+                    vertical:true,
+                    itemsToShow:1,
+                    infiniteScroll: false,
+                    centerMode: true,
+                }   
+            }
+        },
+        vuetify: new Vuetify(),
+        computed: {
+        order () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 'last'
+          case 'sm': return 'last'
+          case 'md': return 'first'
+          case 'lg': return 'first'
+          case 'xl': return 'first'
+        }
+      }
+    },
+        delimiters: ["${", "}"]
+    })
+</script>
+

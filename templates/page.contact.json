@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "contact": {
+      "type": "contact-template",
+      "settings": {
+        "width": 1200,
+        "hide_ttl": true,
+        "breadcrumb": false,
+        "layout": "style1",
+        "show_google_map": false,
+        "map_address": "124 Chester Hill NSW 2162 Australia",
+        "api_key": "AIzaSyBfs0U_8RAYVZGgqMLb_dgO55R4Cw0X30k",
+        "contact_title": "HEY MODELLETES,",
+        "contact_text_desc": "Have any queries drop it here or contact us on social media or chatbox.",
+        "show_phone": false,
+        "show_subject": false,
+        "store_opening_time": "",
+        "cnt_title": "INFO",
+        "store_address": "PO box 124 Chester Hill NSW 2162 Australia",
+        "store_phone": "<strong>PHONE : <\/strong>+61 416827187 Mon-Fri : 9AM-5PM (AEST)",
+        "store_email": "<strong>EMAIL:<\/strong> cs@modelle.com.au",
+        "show_socials": true,
+        "socials_ttl": "Stay Connected",
+        "form_bg": "#f8f8f8",
+        "form_text": "#111111"
+      }
+    }
+  },
+  "order": [
+    "contact"
+  ]
+}
