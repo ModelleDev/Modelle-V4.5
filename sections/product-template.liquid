@@ -121,17 +121,25 @@
             }
         },
         mounted() {
-    this.swiper = new window.Swiper('.swiper-container', {
-      cssMode: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination'
-      },
+    this.swiper = new window.Swiper('.mySwiper', {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    })
+    this.swiper = new window.Swiper('.mySwiper2', {
+      loop: true,
+      spaceBetween: 10,
       mousewheel: true,
       keyboard: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
     })
   },
         vuetify: new Vuetify(),
