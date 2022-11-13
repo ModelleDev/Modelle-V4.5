@@ -13,6 +13,23 @@
   .mySwiper {
     width: 30%;
   }
+  .swiper-pagination-bullet {
+    background: none;
+    border: 1px solid white;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: white;
+  }
+  @media screen and (max-width: 767px) {
+    .mySwiper {
+      display: none;
+    }
+    .swiper-pagination-vertical.swiper-pagination-bullets,
+    .swiper-vertical > .swiper-pagination-bullets {
+      right: 13vw !important;
+    }
+  }
 </style>
 <v-app>
   <div id="prslid">
@@ -20,7 +37,6 @@
     {%- assign product_thumb_size = '160x' -%} {%- assign
     product_image_zoom_size = '1800x1800' -%} {%- assign enable_zoom =
     settings.enable_zoom -%}
-
     <div class="d-flex justify-center mb-6 bg-surface-variant">
       <v-sheet
         :height="heightS2"
@@ -38,9 +54,10 @@
           </div>
           {% endcase %} {% endfor %}
         </div>
+
         <div class="swiper-pagination"></div>
       </v-sheet>
-      <v-sheet v-show="$vuetify.breakpoint.mobile" thumbsSlider="" class="swiper mySwiper">
+      <v-sheet thumbsSlider="" class="swiper mySwiper">
         <div class="swiper-wrapper sw-th">
           {% for media in product.media %} {% case media.media_type %} {% when
           'image' %}
@@ -57,7 +74,9 @@
 <script>
   const vue = new Vue({
     el: "#prslid",
-    data: {
+    data() {
+      return {
+      };
     },
     vuetify: new Vuetify(),
     computed: {
@@ -78,9 +97,9 @@
       heightS2() {
         switch (this.$vuetify.breakpoint.name) {
           case "xs":
-            return "90vh";
+            return "125vw";
           case "sm":
-            return "90vh";
+            return "125vw";
           case "md":
             return "45vw";
           case "lg":
@@ -88,23 +107,23 @@
           case "xl":
             return "45vw";
         }
-      }
+      },
     },
     mounted() {
       var swiper = new Swiper(".mySwiper", {
-        loop: true,
         spaceBetween: 2,
+        loop: true,
         slidesPerView: 5,
         freeMode: true,
         watchSlidesProgress: true,
       });
       var swiper2 = new Swiper(".mySwiper2", {
         direction: "vertical",
+        loop: true,
         mousewheel: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-          mousewheel: true,
         },
         zoom: {
           maxRatio: 2,
