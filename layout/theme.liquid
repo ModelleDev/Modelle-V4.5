@@ -51,7 +51,6 @@
       href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="preload"
       as="style"
@@ -207,9 +206,11 @@
       >
         {{ content_for_layout }}
       </main>
+      {% unless template.name == 'product' %}
       {%- section 'footer' -%} {% if settings.layout_style == "boxedlayout" %}
+      
     </div>
-    {% endif %} {% section 'custom-colors' %}
+    {% endif %} {% endunless %} {% section 'custom-colors' %}
     <script
       src="{{ 'option_selection.js' | shopify_asset_url }}"
       defer="defer"

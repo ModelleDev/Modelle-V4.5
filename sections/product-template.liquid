@@ -1,17 +1,26 @@
 <style>
+  #pr-img {
+    width: 100%;
+    height: 100%;
+  }
+  #dummy-chat-button-iframe {
+    display: none !important;
+  }
   .swiper-slide-thumb-active > img {
     opacity: 1 !important;
   }
 
   .swiper-slide-visible > img {
     background-color: #000000;
-    opacity: 0.8;
   }
   /* .sw-th > .swiper-slide{
     width: 70px !important;
   } */
   .mySwiper {
     width: 30%;
+  }
+  .swiper-zoom-container {
+    margin: -0.2rem 0;
   }
   .swiper-pagination-bullet {
     background: none;
@@ -21,7 +30,27 @@
   .swiper-pagination-bullet-active {
     background-color: white;
   }
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: black;
+  }
+  .swiper-horizontal
+    > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,
+  .swiper-pagination-progressbar.swiper-pagination-vertical,
+  .swiper-vertical > .swiper-pagination-progressbar {
+    right: 0 !important;
+    left: auto !important;
+    height: 98.7% !important;
+  }
   @media screen and (max-width: 767px) {
+    .swiper-horizontal
+      > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,
+    .swiper-pagination-progressbar.swiper-pagination-vertical,
+    .swiper-vertical > .swiper-pagination-progressbar {
+      right: 5vw !important;
+      height: 100%;
+    }
     .mySwiper {
       display: none;
     }
@@ -49,7 +78,11 @@
           'image' %}
           <div class="swiper-slide">
             <div class="swiper-zoom-container">
-              <img src="{{ media | img_url: '450x' }}" alt="{{ media.alt }}" />
+              <img
+                id="pr-img"
+                src="{{ media | img_url: '450x' }}"
+                alt="{{ media.alt }}"
+              />
             </div>
           </div>
           {% endcase %} {% endfor %}
@@ -69,15 +102,31 @@
       </v-sheet>
     </div>
   </div>
+  <div>
+    <v-btn
+          color="success"
+          class="mt-12"
+          @click="overlay = !overlay"
+        >
+          Show Overlay
+        </v-btn>
+  <v-overlay
+          :absolute="absolute"
+          :value="overlay"
+        >
+    <p>{{ product.description }}</p>
+  </v-overlay>
+  </div>
+  
 </v-app>
 
 <script>
   const vue = new Vue({
     el: "#prslid",
-    data() {
-      return {
-      };
-    },
+    data: () => ({
+        absolute: true,
+      overlay: false,
+      }),
     vuetify: new Vuetify(),
     computed: {
       widthS2() {
@@ -91,7 +140,7 @@
           case "lg":
             return "30%";
           case "xl":
-            return "30%";
+            return "35%";
         }
       },
       heightS2() {
@@ -105,7 +154,7 @@
           case "lg":
             return "45vw";
           case "xl":
-            return "45vw";
+            return "35vw";
         }
       },
     },
@@ -123,6 +172,7 @@
         mousewheel: true,
         pagination: {
           el: ".swiper-pagination",
+          type: "progressbar",
           clickable: true,
         },
         zoom: {
